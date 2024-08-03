@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Link to deployed system (https://hr-system-921be.web.app)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
