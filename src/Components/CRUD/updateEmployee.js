@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, Label, TextInput, Select } from 'flowbite-react';
+import {  Button, Label, TextInput, Select } from 'flowbite-react';
 import { db } from '../../config/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 
-const UpdateEmployee = ({ showModal, setShowModal, employee, onUpdate }) => {
+const UpdateEmployee = ({  setShowModal, employee, onUpdate }) => {
   const [name, setName] = useState(employee.name);
   const [surname, setSurname] = useState(employee.surname);
   const [email, setEmail] = useState(employee.email);

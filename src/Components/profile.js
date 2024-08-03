@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {  query, where,collection, getDocs } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { getGravatarUrl, uploadImage } from './utils/utils'; 
-import { Card, Button } from 'flowbite-react';
-import { ref, getDownloadURL } from 'firebase/storage';
-import { storage } from '../config/firebase'; 
+import { Card } from 'flowbite-react';
+// import { ref, getDownloadURL } from 'firebase/storage';
+// import { storage } from '../config/firebase'; 
 
 const ProfilePage = () => {
   const [employee, setEmployee] = useState(null);

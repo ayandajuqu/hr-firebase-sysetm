@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { db } from '../../config/firebase';
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs,  getDoc } from 'firebase/firestore';
 
 const useEmployees = () => {
   const [employees, setEmployees] = useState([]);
