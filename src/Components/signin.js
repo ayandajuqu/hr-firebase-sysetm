@@ -3,12 +3,13 @@ import { auth, db } from "../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { query, where, getDocs, collection } from "firebase/firestore";
 import { Button, Label, TextInput, Alert } from 'flowbite-react';
-
+import { useNavigate } from 'react-router-dom';
 export const SignIn = () => {
   const [employeeNumber, setEmployeeNumber] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const navigate = useNavigate(); 
+  
   const handleSignIn = async (event) => {
     event.preventDefault();
     if (!employeeNumber || !password) {
@@ -30,7 +31,7 @@ export const SignIn = () => {
       await signInWithEmailAndPassword(auth, userData.email, password);
       localStorage.setItem('employeeNumber', employeeNumber);
       console.log("Signed in successfully");
-      
+      navigate('/home');
     } catch (err) {
       console.error('Failed to sign in', err);
       setError(err.message);
@@ -63,6 +64,15 @@ export const SignIn = () => {
         <Button type="submit">Sign In</Button>
       </form>
       {error && <Alert color="failure" className="mt-4">{error}</Alert>}
+      <p className="mt-4">
+        Don't have an account?{" "}
+        <Button
+          onClick={() => navigate('/signup')} 
+          className="text-blue-600 hover:underline"
+        >
+          Sign Up
+        </Button>
+      </p>
     </div>
   );
 };
